@@ -1,0 +1,108 @@
+﻿<Page
+    x:Class="FontMetricsUwp.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:FontMetricsUwp"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{StaticResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <ListBox Name="lstbox"
+                 Grid.Column="0"
+                 Width="300"
+                 SelectionChanged="OnListBoxSelectionChanged">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding}"
+                               FontFamily="{Binding}"
+                               FontSize="24" />
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+
+        <Grid Grid.Column="1"
+              HorizontalAlignment="Center"
+              VerticalAlignment="Center">
+            <Border BorderBrush="{StaticResource ApplicationForegroundThemeBrush}"
+                    BorderThickness="1">
+                <Grid>
+                    <Grid.Resources>
+                        <Style TargetType="Line">
+                            <Setter Property="StrokeThickness" Value="1" />
+                            <Setter Property="X1" Value="0" />
+                        </Style>
+                    </Grid.Resources>
+
+                    <TextBlock Name="txtblk" SizeChanged="OnTextBlockSizeChanged" />
+
+                    <Line x:Name="ascenderLine" Y1="0" Y2="0" Stroke="Red" />
+                    <Line x:Name="capsHeightLine" Stroke="Green" />
+                    <Line x:Name="xHeightLine" Stroke="Blue" />
+                    <Line x:Name="baselineLine" Stroke="Orange" />
+                    <Line x:Name="descenderLine" Stroke="Brown" />
+                    <Line x:Name="lineGapLine" Stroke="DeepPink" />
+                </Grid>
+            </Border>
+        </Grid>
+        <StackPanel
+            Orientation="Horizontal"
+            Grid.Column="1"
+            Margin="20"
+            VerticalAlignment="Bottom"
+            HorizontalAlignment="Center">
+            <TextBox
+                x:Name="ContentTextBox"
+                Header="Text"
+                TextChanged="ContentTextBox_TextChanged"
+                VerticalAlignment="Center"
+                Width="250" />
+            <TextBox
+                x:Name="FontSizeTextBox"
+                Header="FontSize"
+                InputScope="Number"
+                TextChanged="FontSizeTextBox_TextChanged"
+                VerticalAlignment="Center"
+                Width="150" />
+            <StackPanel>
+                <StackPanel.Resources>
+                    <Style TargetType="Rectangle">
+                        <Setter Property="Width" Value="10" />
+                        <Setter Property="Height" Value="10" />
+                        <Setter Property="Margin" Value="12,0,12,0" />
+                    </Style>
+                    <Style TargetType="TextBlock" BasedOn="{StaticResource CaptionTextBlockStyle}" />
+                </StackPanel.Resources>
+                <StackPanel Orientation="Horizontal">
+                    <Rectangle Fill="Red" />
+                    <TextBlock x:Name="AscenderTextBlock" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Rectangle Fill="Green" />
+                    <TextBlock x:Name="CapHeightTextBlock" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Rectangle Fill="Red" />
+                    <TextBlock x:Name="XHeightTextBlock" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Rectangle Fill="Brown" />
+                    <TextBlock x:Name="DescenderTextBlock" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Rectangle Fill="DeepPink" />
+                    <TextBlock x:Name="LineGapTextBlock" />
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock x:Name="DesignUnitsTextBlock" Margin="12,0,0,0" />
+                </StackPanel>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Page>
