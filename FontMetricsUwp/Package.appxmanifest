@@ -1,10 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Package xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10" xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest" xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10" IgnorableNamespaces="uap mp">
-  <Identity Name="63421Cryclops.FontMetrics" Publisher="CN=8D2B5C7F-61B7-47F2-93E3-5D92D31DDB0A" Version="1.1.1.0" />
+  <Identity Name="63421Cryclops.FontMetrics" Publisher="CN=8D2B5C7F-61B7-47F2-93E3-5D92D31DDB0A" Version="1.1.3.0" />
   <mp:PhoneIdentity PhoneProductId="5d08b999-0156-4841-8d80-295b5946d283" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
   <Properties>
     <DisplayName>Font Metrics</DisplayName>
-    <PublisherDisplayName>Cryclops</PublisherDisplayName>
+    <PublisherDisplayName>Weston Thayer</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
   <Dependencies>

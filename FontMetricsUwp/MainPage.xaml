@@ -87,7 +87,7 @@
                     <TextBlock x:Name="CapHeightTextBlock" />
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
-                    <Rectangle Fill="Red" />
+                    <Rectangle Fill="Blue" />
                     <TextBlock x:Name="XHeightTextBlock" />
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
