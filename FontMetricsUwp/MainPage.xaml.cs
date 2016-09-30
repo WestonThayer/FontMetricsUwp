@@ -37,7 +37,7 @@ namespace FontMetricsUwp
             writeFactory = new WriteFactory();
             writeFontCollection = writeFactory.GetSystemFontCollection();
             int count = writeFontCollection.GetFontFamilyCount();
-            string[] fonts = new string[count];
+            List<string> fonts = new List<string>();
 
             for (int i = 0; i < count; i++)
             {
@@ -50,9 +50,12 @@ namespace FontMetricsUwp
 
                 if (writeLocalizedStrings.FindLocaleName("en-us", out index))
                 {
-                    fonts[i] = writeLocalizedStrings.GetString(index);
+                    fonts.Add(writeLocalizedStrings.GetString(index));
                 }
             }
+
+            // Sort alphabetically
+            fonts = fonts.OrderBy(item => item).ToList();
 
             lstbox.ItemsSource = fonts;
 
